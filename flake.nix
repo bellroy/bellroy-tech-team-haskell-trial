@@ -20,7 +20,9 @@
     {
       defaultPackage = package;
       devShell = package.env.overrideAttrs (oldAttrs: {
-        buildInputs = oldAttrs.buildInputs ++ [ nixpkgs.cabal-install ];
+        buildInputs = oldAttrs.buildInputs ++ [
+          nixpkgs.cabal-install nixpkgs.zlib
+        ];
       });
     }
   );
