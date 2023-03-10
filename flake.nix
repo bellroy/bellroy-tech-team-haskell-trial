@@ -20,9 +20,9 @@
     {
       defaultPackage = package;
       devShell = package.env.overrideAttrs (oldAttrs: {
-        buildInputs = oldAttrs.buildInputs ++ [
-          nixpkgs.cabal-install nixpkgs.zlib
-        ];
+        buildInputs = oldAttrs.buildInputs ++ (with nixpkgs; [
+          cabal-install zlib haskell-language-server ormolu
+        ]);
       });
     }
   );
