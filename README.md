@@ -9,6 +9,6 @@ rates for a given country.
 
 Clone the repo (please don't fork it), and then you can use:
 
-* `cabal build`/`cabal run` directly;
+* `cabal build`/`cabal run tech-team-haskell-trial`/`cabal test` directly;
 * `nix-shell`, then `cabal build`/`cabal run`; or
 * `nix develop`, then `cabal build`/`cabal run`
