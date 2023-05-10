@@ -1,0 +1,4 @@
+{"type": "order_line", "order_id": "B001", "count": 3, "sku": "WALLET-BLACK"}
+{"type": "order_line", "order_id": "B001", "count": 1, "sku": "WALLET-BLUE"}
+{"type": "order_line", "order_id": "B001", "count": 1, "sku": "BAG-GREEN"}
+{"type": "order_line", "order_id": "B002", "count": 100, "sku": "WALLET-BLUE"}

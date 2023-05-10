@@ -10,20 +10,25 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = inputs: inputs.flake-utils.lib.eachDefaultSystem (system:
-    let
-      nixpkgs = import inputs.nixpkgs { inherit system; };
-      package = nixpkgs.haskellPackages.callPackage
-        ./bellroy-tech-team-haskell-trial.nix
-        { };
-    in
-    {
-      defaultPackage = package;
-      devShell = package.env.overrideAttrs (oldAttrs: {
-        buildInputs = oldAttrs.buildInputs ++ [
-          nixpkgs.cabal-install nixpkgs.zlib
-        ];
-      });
-    }
-  );
+  outputs = inputs:
+    inputs.flake-utils.lib.eachDefaultSystem (
+      system: let
+        nixpkgs = import inputs.nixpkgs {inherit system;};
+        package =
+          nixpkgs.haskellPackages.callPackage
+          ./bellroy-tech-team-haskell-trial.nix
+          {};
+      in {
+        defaultPackage = package;
+        devShell = package.env.overrideAttrs (oldAttrs: {
+          buildInputs =
+            oldAttrs.buildInputs
+            ++ [
+              nixpkgs.cabal-install
+              nixpkgs.zlib
+              nixpkgs.ormolu
+            ];
+        });
+      }
+    );
 }
