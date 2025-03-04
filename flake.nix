@@ -2,7 +2,7 @@
   description = "Bellroy Tech Team Haskell Trial";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
