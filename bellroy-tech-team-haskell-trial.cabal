@@ -7,6 +7,8 @@ maintainer:         jack.kelly@bellroy.com
 copyright:          Copyright (C) 2021 Bellroy Pty Ltd
 category:           Recruitment, Demo
 extra-source-files: CHANGELOG.md
+
+-- This repo does not have CI, so this just reflects what is provided by the dev shell.
 tested-with:        GHC ==9.6.5
 
 executable tech-team-haskell-trial-a
