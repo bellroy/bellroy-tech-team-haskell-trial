@@ -8,8 +8,8 @@ import Control.Monad
 import Control.Monad.Trans.Class
 import Data.Aeson hiding (json)
 import Data.Aeson.KeyMap
-import Data.ByteString as BS
-import Data.ByteString.Lazy as LBS
+import Data.ByteString.Char8 as BS hiding ((!?))
+import Data.ByteString.Lazy as LBS hiding ((!?))
 import Data.Text
 import qualified Database.SQLite.Simple as SQLite
 import Network.HTTP.Types
