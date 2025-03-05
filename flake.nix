@@ -23,6 +23,7 @@
         devShell = package.env.overrideAttrs (oldAttrs: {
           buildInputs = oldAttrs.buildInputs ++ [
             nixpkgs.cabal-install
+            nixpkgs.haskellPackages.cabal-fmt
             nixpkgs.zlib
             nixpkgs.ormolu
           ];
