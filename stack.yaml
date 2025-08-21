@@ -5,4 +5,4 @@ packages: [.]
 
 nix:
   enable: true
-  packages: [zlib.dev, zlib.out, pkg-config]
+  packages: [zlib, pkg-config]
