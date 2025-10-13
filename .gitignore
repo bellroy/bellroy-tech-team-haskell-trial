@@ -1,5 +1,8 @@
 dist/
-dist-newstyle/
+dist-*/
 .direnv/
 .envrc
 .stack-work
+
+.claude/settings.local.json
+cabal.project.local
