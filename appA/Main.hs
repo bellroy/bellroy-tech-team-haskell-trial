@@ -29,7 +29,7 @@ main = do
   c <- initDB
   (`finally` SQLite.close c) . scotty 3000 $
     get "/shipping_rates" $ do
-      country_code :: Text <- param "country_code"
+      country_code :: Text <- queryParam "country_code"
       rate :: [ShippingRate] <-
         lift $
           SQLite.query
