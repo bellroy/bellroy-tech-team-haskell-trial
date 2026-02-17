@@ -2,7 +2,7 @@
   description = "Bellroy Tech Team Haskell Trial";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-25.05-darwin";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-25.11-darwin";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -19,6 +19,7 @@
         devShell = package.env.overrideAttrs (oldAttrs: {
           buildInputs = oldAttrs.buildInputs ++ [
             nixpkgs.cabal-install
+            nixpkgs.stack
             nixpkgs.haskellPackages.cabal-fmt
             nixpkgs.zlib
             nixpkgs.ormolu

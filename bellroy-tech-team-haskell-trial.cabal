@@ -9,16 +9,16 @@ category:           Recruitment, Demo
 extra-source-files: CHANGELOG.md
 
 -- This repo does not have CI, so this just reflects what is provided by the dev shell.
-tested-with:        GHC ==9.8.4
+tested-with:        GHC ==9.10.3
 
 executable tech-team-haskell-trial-a
   main-is:          Main.hs
   other-modules:    DB
   build-depends:
     , aeson          ^>=2.2
-    , base           ^>=4.19
+    , base           ^>=4.20
     , http-types     ^>=0.12.3
-    , scotty         ^>=0.22
+    , scotty         ^>=0.30
     , sqlite-simple  ^>=0.4.18.0
     , text           ^>=2.1.1
     , transformers   ^>=0.6
@@ -30,10 +30,10 @@ executable tech-team-haskell-trial-b
   main-is:          Main.hs
   build-depends:
     , aeson          ^>=2.2
-    , base           ^>=4.19
+    , base           ^>=4.20
     , bytestring     ^>=0.12
     , http-types     ^>=0.12.3
-    , scotty         ^>=0.22
+    , scotty         ^>=0.30
     , sqlite-simple  ^>=0.4.18.0
     , text           ^>=2.1.1
     , transformers   ^>=0.6
