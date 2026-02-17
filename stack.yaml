@@ -1,8 +1,11 @@
 snapshot:
-  url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/23/28.yaml
+  url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/24/11.yaml
 
 packages: [.]
 
 nix:
   enable: true
   packages: [zlib, pkg-config]
+
+extra-deps:
+  - scotty-0.30@sha256:bcd3436af3ac3959ec1d0b2c4a9ce189b129beebf190aa8c808a69b0f275f228,6137
