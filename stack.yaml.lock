@@ -13,8 +13,8 @@ packages:
     hackage: scotty-0.30@sha256:bcd3436af3ac3959ec1d0b2c4a9ce189b129beebf190aa8c808a69b0f275f228,6137
 snapshots:
 - completed:
-    sha256: e9e41fa6ceba9911de922014632ed66aa6f87af0cf92fc54f0e1835176a5be06
-    size: 732456
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/24/45.yaml
+    sha256: 0a3fe947012a776b310e33c66e78f43d1aa3160bd9e178c0fdb32fa7a9984db3
+    size: 732687
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/24/53.yaml
   original:
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/24/45.yaml
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/24/53.yaml
