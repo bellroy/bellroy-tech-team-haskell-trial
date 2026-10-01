@@ -1,3 +1,50 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabledManagers": ["custom.regex", "nix"],
+  "includePaths": ["*.cabal", "flake.nix", "flake.lock"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update single-bound numeric caret bounds in build-depends",
+      "managerFilePatterns": ["/\\.cabal$/"],
+      "matchStrings": [
+        "(?:^|\\r?\\n)[ \\t]+,?[ \\t]*(?<depName>[A-Za-z0-9][A-Za-z0-9-]*)[ \\t]+\\^>=(?<currentValue>[0-9]+(?:\\.[0-9]+)+)(?=[ \\t]*(?:,|\\r?\\n|$))"
+      ],
+      "datasourceTemplate": "hackage",
+      "versioningTemplate": "loose"
+    }
+  ],
+  "nix": {
+    "enabled": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["* * * * 0"]
+  },
+  "minimumReleaseAge": "7 days",
+  "packageRules": [
+    {
+      "description": "Hackage has no release timestamps; reviewers must check release age before merging",
+      "matchManagers": ["custom.regex"],
+      "matchDatasources": ["hackage"],
+      "allowedVersions": "/^[0-9]+(?:\\.[0-9]+)+$/",
+      "minimumReleaseAgeBehaviour": "timestamp-optional",
+      "automerge": false,
+      "groupName": "cabal"
+    },
+    {
+      "description": "Packages shipped with GHC are fixed by the compiler/snapshot",
+      "matchDatasources": ["hackage"],
+      "matchPackageNames": ["base", "bytestring", "text", "transformers"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["nix"],
+      "groupName": "nix and lockfiles"
+    },
+    {
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "groupName": "nix and lockfiles"
+    }
+  ]
 }
