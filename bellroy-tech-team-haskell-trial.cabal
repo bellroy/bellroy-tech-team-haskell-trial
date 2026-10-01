@@ -15,7 +15,7 @@ executable tech-team-haskell-trial-a
   main-is:          Main.hs
   other-modules:    DB
   build-depends:
-    , aeson          ^>=2.2
+    , aeson          ^>=2.2 || ^>=2.3
     , base           ^>=4.20
     , http-types     ^>=0.12.3
     , scotty         ^>=0.30
@@ -29,7 +29,7 @@ executable tech-team-haskell-trial-a
 executable tech-team-haskell-trial-b
   main-is:          Main.hs
   build-depends:
-    , aeson          ^>=2.2
+    , aeson          ^>=2.2 || ^>=2.3
     , base           ^>=4.20
     , bytestring     ^>=0.12
     , http-types     ^>=0.12.3
