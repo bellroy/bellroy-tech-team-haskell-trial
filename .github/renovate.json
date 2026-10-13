@@ -24,6 +24,11 @@
   "minimumReleaseAge": "7 days",
   "packageRules": [
     {
+      "description": "Schedule updates for all packages on Sundays",
+      "matchPackageNames": ["**"],
+      "schedule": ["on sunday"]
+    },
+    {
       "description": "Hackage has no release timestamps; reviewers must check release age before merging",
       "matchManagers": ["custom.regex"],
       "matchDatasources": ["hackage"],
