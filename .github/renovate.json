@@ -16,11 +16,11 @@
     }
   ],
   "nix": {
-    "enabled": true
-  },
-  "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["* * * * 0"]
+    "lockFileMaintenance": {
+      "enabled": true,
+      "schedule": ["on sunday"]
+    }
   },
   "minimumReleaseAge": "7 days",
   "packageRules": [
@@ -46,11 +46,7 @@
     },
     {
       "matchManagers": ["nix"],
-      "groupName": "nix and lockfiles"
-    },
-    {
-      "matchUpdateTypes": ["lockFileMaintenance"],
-      "groupName": "nix and lockfiles"
+      "groupName": "nix"
     }
   ]
 }
